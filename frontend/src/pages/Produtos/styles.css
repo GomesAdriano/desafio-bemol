@@ -1,0 +1,12 @@
+.area-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 100px 110px;
+}
+
+@media screen and (max-width: 768px) {
+  .area-produtos {
+    padding: 100px 20px;
+  }
+}
