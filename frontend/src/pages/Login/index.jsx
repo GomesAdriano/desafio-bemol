@@ -31,9 +31,25 @@ const LoginPage = () => {
       }
 
       setCpfInvalid(false);
- 
-      const res = await loginCliente(cpf, data.senha); 
-      if (res.includes("incorretos")) return toast.error(res);
+      const { error, data: res } = await loginCliente(cpf, data.senha); 
+
+      if (error) {
+         return toast.error(error);
+      }
+      const nome = res.nome_completo;
+
+      const endereco = {
+         logradouro: res.logradouro,
+         numero: res.numero,
+         complemento: res.complemento,
+         bairro: res.bairro,
+         cidade: res.cidade,
+         estado: res.estado,
+         cep: res.cep
+      }
+
+      const cliente = { nome, endereco }
+      localStorage.setItem('cliente', JSON.stringify(cliente));
       navigate('/produto');
    }
 

@@ -1,0 +1,51 @@
+.modal-compra {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.imagem-compra {
+  width: 100%;
+  margin: 0 auto;
+  margin: 20px 0;
+}
+
+.descricao-compra {
+  font-size: 0.88rem
+}
+
+.titulo-compra {
+  margin-right: 10px;
+}
+
+.preco-compra {
+  font-size: 2.2rem;
+}
+
+.botao-sair {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  border: none;
+  background-color: transparent;
+  color: var(--gray-400);
+  font-size: 1.9rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.botao-sair:hover {
+  color: var(--gray-800);
+}
+
+.divisor {
+  color: var(--gray-400);
+}
+
+@media screen and (max-width: 767px) {
+  .imagem-compra {
+    height: 150px;
+    object-fit: contain;
+  }
+}

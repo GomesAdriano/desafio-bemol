@@ -37,10 +37,18 @@ const login = async (req: Request, res: Response) => {
         const cliente = await loginCliente(cpf, senha);
         if (!cliente) return res.status(401).json({ msg: 'CPF e/ou Senha incorretos' });
         req.session.uid = cliente.cliente_cpf;
-        res.status(201).json({ msg: 'Cliente autenticado com sucesso' });
+        res.status(201).json(cliente);
     } catch (error) {
         res.status(500).json(error);
     }
 };
 
-export default { cadastrarCliente, login };
+const logout = async (req: Request, res: Response) => {
+
+    req.session.destroy((err) => {
+        if (err) return res.status(500).json(err);
+        res.status(200).json({ msg: 'Cliente deslogado com sucesso' });
+    });
+};
+
+export default { cadastrarCliente, login, logout };

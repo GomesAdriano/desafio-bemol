@@ -1,28 +1,25 @@
-import React from 'react'
+import { infoCliente, logoutCliente } from '../../services/cliente.service'
 import './styles.css'
 import { Link } from 'react-router-dom'
 
 export default function Header() {
+
   return (
     <div className='box-header'>
-      <div>
-        <a href='#' className='link'>Produtos</a>
+      <div className='flex'>
+        <Link href='/produto' className='link'>Produtos</Link> 
+        <Link href="/pedido" className='link'>Pedidos</Link>
       </div>
 
       <div className='flex'>
         <span className='text'>
-        Bem vindo Usuário
+        Bem vindo, {localStorage.getItem('cliente') !== null && infoCliente().nome.split(' ')[0]}        
         </span>
-        <a 
-        href="#"
-        className='button-login-logout'>
+        <button
+          onClick={logoutCliente}
+          className='button-login-logout'>
           Sair
-        </a>
-        {/* <a 
-        href="#"
-        className='button-login-logout'>
-          Entrar
-        </a> */}
+        </button>
       </div>
     </div>
   )

@@ -25,15 +25,6 @@ class Http {
             headers,
             withCredentials: true,
         });
-
-        /*http.interceptors.response.use(
-            (response) => {
-                return response
-            },
-            (error) => {
-                return error;
-            },
-        );*/
         this.instance = http;
         return http;
     }
