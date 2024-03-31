@@ -7,8 +7,8 @@ export default function Header() {
   return (
     <div className='box-header'>
       <div className='flex'>
-        <Link href='/produto' className='link'>Produtos</Link> 
-        <Link href="/pedido" className='link'>Pedidos</Link>
+        <Link to={'/produto'} className='link'>Produtos</Link> 
+        <Link to={"/pedido"} className='link'>Pedidos</Link>
       </div>
 
       <div className='flex'>

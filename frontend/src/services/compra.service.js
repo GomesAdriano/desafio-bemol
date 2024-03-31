@@ -1,3 +1,4 @@
+import axios from "axios";
 import { instance } from "../utils/http";
 
 export const efetuarCompra = async (compra) => {   
@@ -10,15 +11,20 @@ export const efetuarCompra = async (compra) => {
     return res;   
 }
 
-export const listarCompras = async () => {     
+export const getCompras = async () => {     
     try {
         const response = await instance.http.get('/compra');
         const { data } = response;
         const pedidosPorCliente = organizarCompras(data);
 
-        return { error: null, data: pedidosPorCliente };
+        return { error: null, data: pedidosPorCliente[0] };
     } catch (error) {
-        return { error: error.response.data.msg, data: null };
+        if (axios.isAxiosError(error)) {
+            if (error.response?.status === 401) {
+              window.location.href = "/";
+            }
+        }else
+            return { error: error.response.data.msg, data: null };
     }
 }
 

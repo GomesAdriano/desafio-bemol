@@ -11,7 +11,7 @@ import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CPF from 'cpf';
  
-const CadastroClientePage = () => {
+export default function CadastroClientePage() {
 
    const { setValue, register, handleSubmit, formState: { errors } } = useForm({
       resolver: zodResolver(schemaCadastro)
@@ -294,6 +294,4 @@ const CadastroClientePage = () => {
       </div>
     )
  }
-
- export default CadastroClientePage;
 

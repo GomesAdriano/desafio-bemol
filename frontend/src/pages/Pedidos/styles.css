@@ -1,0 +1,29 @@
+.area-pedidos {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 150px 70px 100px;
+}
+
+.saldo-pedidos {
+  background-color: var(--blue-900);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .area-pedidos {
+    padding: 0px 20px 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .area-pedidos {
+    margin: 180px 10px 100px;
+  }
+}

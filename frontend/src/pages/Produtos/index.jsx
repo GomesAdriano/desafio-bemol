@@ -3,7 +3,7 @@ import CardProduto from '../../components/CardProduto'
 import ModalCompra from '../../components/ModalCompra'
 import './styles.css'
 import { getProdutos } from '../../services/produto.service';
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 export default function Produtos() {
 
@@ -14,15 +14,6 @@ export default function Produtos() {
   const listarProdutos = async () => {
     const res = await getProdutos();
     setProdutos(res);
-
-  /*const parcela = {
-    parcela_id,
-    numero_parcela,
-    valor_parcela,
-    compra_id,
-    qtd_parcela
-  }*/
-
   }
 
   useEffect(() => {

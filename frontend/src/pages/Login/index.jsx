@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const LoginPage = () => {
+export default function LoginPage() {
    
    const [cpfInvalid, setCpfInvalid] = useState(false);
 
@@ -118,6 +118,3 @@ const LoginPage = () => {
    </div>
    )
  }
-
- export default LoginPage;
-
