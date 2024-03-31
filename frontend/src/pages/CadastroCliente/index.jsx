@@ -123,7 +123,8 @@ export default function CadastroClientePage() {
                      type='text' 
                      className='input' 
                      placeholder='Nome Completo' 
-                     {...register('nome_completo')}/>
+                     {...register('nome_completo')}
+                     />
                      <div className='errors-box'>
                         {errors.nome_completo && <span className='errors'>{errors.nome_completo.message}</span>}
                      </div>
@@ -145,7 +146,8 @@ export default function CadastroClientePage() {
                      type='text' 
                      className='input' 
                      placeholder='Telefone' 
-                     {...register('telefone')}/>
+                     {...register('telefone')}
+                     />
                      <div className='errors-box'>
                         {errors.telefone && <span className='errors'>{errors.telefone.message}</span>}
                         {telefoneInvalid && <span className='errors'>Informe um telefone válido</span>}
@@ -157,6 +159,7 @@ export default function CadastroClientePage() {
                         className='input' 
                         placeholder='Senha' 
                         {...register('senha')}
+                        
                      />
                      <div className='errors-box'>
                         {errors.senha && <span className='errors'>{errors.senha.message}</span>}
@@ -169,6 +172,7 @@ export default function CadastroClientePage() {
                         className='input' 
                         placeholder='Repita a senha' 
                         {...register('repetir_senha')}
+                        
                      />
                      <div className='errors-box'>
                         {errors.repetir_senha && <span className='errors'>{errors.repetir_senha.message}</span>}
@@ -182,6 +186,7 @@ export default function CadastroClientePage() {
                      className='input' 
                      placeholder='CEP' 
                      {...register('cep')}
+                     
                      onChange={(event) => { 
                         event.target.value.length >= 9 ? buscarCep(event.target.value) : limparCampos()
                      }}/>
@@ -198,6 +203,7 @@ export default function CadastroClientePage() {
                         className='input' 
                         placeholder='Logradouro' 
                         {...register('logradouro')}
+                        
                      />
                      <div className='errors-box'>
                         {errors.logradouro && <span className='errors'>{errors.logradouro.message}</span>}
@@ -210,6 +216,7 @@ export default function CadastroClientePage() {
                         className='input' 
                         placeholder='Nº da Casa' 
                         {...register('numero')}
+                        
                      />
                      <div className='errors-box'>
                         {errors.numero && <span className='errors'>{errors.numero.message}</span>}
@@ -222,6 +229,7 @@ export default function CadastroClientePage() {
                         className='input' 
                         placeholder='Complemento' 
                         {...register('complemento')}
+                        
                      />
                      <div className='errors-box'>
                         {errors.complemento && <span className='errors'>{errors.complemento.message}</span>}
@@ -235,6 +243,7 @@ export default function CadastroClientePage() {
                         className='input' 
                         placeholder='Bairro' 
                         {...register('bairro')}
+                        
                      />
                      <div className='errors-box'>
                         {errors.bairro && <span className='errors'>{errors.bairro.message}</span>}
@@ -248,6 +257,7 @@ export default function CadastroClientePage() {
                         className='input' 
                         placeholder='Cidade' 
                         {...register('cidade')}
+                        
                      />
                      <div className='errors-box'>
                         {errors.cidade && <span className='errors'>{errors.cidade.message}</span>}
@@ -261,6 +271,7 @@ export default function CadastroClientePage() {
                         className='input' 
                         placeholder='Estado' 
                         {...register('estado')}
+                        
                      />
                      <div className='errors-box'>
                         {errors.estado && <span className='errors'>{errors.estado.message}</span>}

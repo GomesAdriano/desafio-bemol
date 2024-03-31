@@ -1,21 +1,15 @@
 /* eslint-disable react/prop-types */
 import Button from 'react-bootstrap/Button';
 import './styles.css'
-import { pagarParcela } from '../../services/parcela.service';
-import { Slide, ToastContainer, toast } from 'react-toastify';
+import { Slide, ToastContainer } from 'react-toastify';
 
-export default function Parcela({ dataParcela, dataCompra, isProximaParcela }) {
-
-    const efetuarPagamentoParcela = async (parcela) => {
-      const res = await pagarParcela(parcela);
-      if (res.includes('sucesso')) return toast.success(res)
-    }
+export default function Parcela({ dataParcela, dataCompra, isProximaParcela, efetuarPagamentoParcela }) {
 
   return (
     <div className='box-parcela'>
       <div className='column'>
         <strong>Parcela {dataParcela.numero_parcela}: </strong>
-        <span>R$ {dataParcela.valor_parcela.replace('.', ',')}</span>
+        <span>R$ {dataParcela && dataParcela.valor_parcela.replace('.', ',')}</span>
       </div>
       <span>{new Date(dataParcela.vencimento).toLocaleDateString('pt-BR')}</span>
       {dataParcela.paga ? (

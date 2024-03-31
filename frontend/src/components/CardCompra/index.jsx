@@ -2,7 +2,7 @@
 import Parcela from '../Parcela';
 import './styles.css';
 
-export default function CardCompra({ data }) {
+export default function CardCompra({ data, efetuarPagamentoParcela }) {
   const dataFormatada = new Date(data.compra.data_compra).toLocaleDateString('pt-BR');
 
   return (
@@ -35,7 +35,12 @@ export default function CardCompra({ data }) {
           {data.parcelas.map((parcela, index) => {
             const parcelaAnterior = data.parcelas[index - 1];
             const isProximaParcela = !parcela.paga && (!parcelaAnterior || parcelaAnterior.paga);
-            return <Parcela dataParcela={parcela} dataCompra={data.compra} isProximaParcela={isProximaParcela} key={parcela.parcela_id} />;
+            return <Parcela 
+            dataParcela={parcela} 
+            dataCompra={data.compra} 
+            isProximaParcela={isProximaParcela} 
+            key={parcela.parcela_id} 
+            efetuarPagamentoParcela={efetuarPagamentoParcela}/>;
           })}
         </div>
       </div>
