@@ -1,17 +1,19 @@
-import axios from "axios";
-import { instance } from "../utils/http";
+import axios from 'axios';
+import { instance } from '../utils/http';
 
-export const efetuarCompra = async (compra) => {   
-    const res = await instance.http.post('/compra', compra)
-    .then((response) => {
-        return response.data.msg;
-    }).catch((error) => {
-        return error.response.data.msg;
-    });         
-    return res;   
-}
+export const efetuarCompra = async (compra) => {
+    const res = await instance.http
+        .post('/compra', compra)
+        .then((response) => {
+            return response.data.msg;
+        })
+        .catch((error) => {
+            return error.response.data.msg;
+        });
+    return res;
+};
 
-export const getCompras = async () => {     
+export const getCompras = async () => {
     try {
         const response = await instance.http.get('/compra');
         const { data } = response;
@@ -21,26 +23,28 @@ export const getCompras = async () => {
     } catch (error) {
         if (axios.isAxiosError(error)) {
             if (error.response?.status === 401) {
-              window.location.href = "/";
+                window.location.href = '/';
             }
-        }else
-            return { error: error.response.data.msg, data: null };
+        } else return { error: error.response.data.msg, data: null };
     }
-}
+};
 
 const organizarCompras = (compras) => {
     const pedidosPorCliente = {};
 
     compras.forEach((compra) => {
         const { cliente_cpf, compra_id, data_compra, qtd_parcela, valor_total, quitado } = compra;
-        const { produto_id, produto_nome, produto_descricao, produto_preco, produto_imagem } = compra;
+        const { produto_id, produto_nome, produto_descricao, produto_preco, produto_imagem } =
+            compra;
         const { parcela_id, numero_parcela, valor_parcela, vencimento, paga } = compra;
 
         if (!pedidosPorCliente[cliente_cpf]) {
             pedidosPorCliente[cliente_cpf] = [];
         }
 
-        const pedidoExistente = pedidosPorCliente[cliente_cpf].find((pedido) => pedido.compra.compra_id === compra_id);
+        const pedidoExistente = pedidosPorCliente[cliente_cpf].find(
+            (pedido) => pedido.compra.compra_id === compra_id,
+        );
 
         if (!pedidoExistente) {
             pedidosPorCliente[cliente_cpf].push({
@@ -49,22 +53,24 @@ const organizarCompras = (compras) => {
                     nome: produto_nome,
                     descricao: produto_descricao,
                     preco: produto_preco,
-                    imagem: produto_imagem
+                    imagem: produto_imagem,
                 },
                 compra: {
                     compra_id,
                     data_compra,
                     qtd_parcela,
                     valor_total,
-                    quitado
+                    quitado,
                 },
-                parcelas: [{
-                    parcela_id,
-                    numero_parcela,
-                    valor_parcela,
-                    vencimento,
-                    paga
-                }]
+                parcelas: [
+                    {
+                        parcela_id,
+                        numero_parcela,
+                        valor_parcela,
+                        vencimento,
+                        paga,
+                    },
+                ],
             });
         } else {
             pedidoExistente.parcelas.push({
@@ -72,16 +78,17 @@ const organizarCompras = (compras) => {
                 numero_parcela,
                 valor_parcela,
                 vencimento,
-                paga
+                paga,
             });
         }
     });
 
-    const pedidosPorClienteArray = Object.entries(pedidosPorCliente).map(([cliente_cpf, pedidos]) => ({
-        cliente_cpf,
-        pedido: pedidos
-    }));
+    const pedidosPorClienteArray = Object.entries(pedidosPorCliente).map(
+        ([cliente_cpf, pedidos]) => ({
+            cliente_cpf,
+            pedido: pedidos,
+        }),
+    );
 
     return pedidosPorClienteArray;
 };
-

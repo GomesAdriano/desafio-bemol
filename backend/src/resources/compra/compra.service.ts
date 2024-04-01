@@ -7,6 +7,7 @@ import { CadastroCompraDto, ListCompraDto } from './compra.types';
 import { utcToZonedTime } from 'date-fns-tz';
 import { descontarCredito } from '../credito/credito.service';
 import { criarParcela } from '../parcela/parcela.service';
+import { format, toDate } from 'date-fns';
 
 export const criarCompra = async (compra: CadastroCompraDto, cpf: string): Promise<boolean> => {
     const dataCompra = utcToZonedTime(new Date(), 'America/Manaus');

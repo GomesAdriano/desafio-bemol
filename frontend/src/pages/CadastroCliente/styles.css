@@ -1,52 +1,56 @@
 .box-left {
-  background-color: #88D4F2;
+    background-color: #88d4f2;
 }
 
 .box-cadastro {
-  overflow-y: auto;
-  padding: 30px;
+    overflow-y: auto;
+    padding: 30px;
 }
 
 .flex-column {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .form-width {
-  width: 90%;
-  margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .imagem {
-  height: 80%;
-  margin: 0 auto;
-  object-fit: contain;
+    height: 80%;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 .buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .button-cadastro {
-  width: 100px;
+    width: 100px;
 }
 
 .main_container {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
 }
 
 @media screen and (max-width: 998px) {
-  .main_container {padding: 0 50px;}
+    .main_container {
+        padding: 0 50px;
+    }
 }
 
 @media screen and (max-width: 576px) {
-  .main_container {padding: 0 25px;}
+    .main_container {
+        padding: 0 25px;
+    }
 }

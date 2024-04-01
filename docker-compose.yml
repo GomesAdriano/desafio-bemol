@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+
+  backend:
+    container_name: bemol_backend
+    command: sh -c "npm cache clean -f && npm run build && npm run prod"
+    restart: always
+    build:
+      context: ./backend
+    ports:
+      - ${PORT_BACK}:${PORT_BACK}
+    volumes:
+      - ./backend:/usr/src/app
+    env_file: ./backend/.env
+    depends_on:
+      - db
+
+  frontend:
+    container_name: bemol_frontend
+    command: sh -c "npm cache clean -f && npm rebuild esbuild && npm start"
+    restart: on-failure
+    build:
+      context: ./frontend
+    ports:
+      - ${PORT_FRONT}:${PORT_FRONT}
+    volumes:
+      - ./frontend:/usr/src/app
+    env_file: ./frontend/.env
+
+  db:
+    image: mysql:8.0
+    container_name: bemol_db
+    ports:
+      - ${PORT_MYSQL}:3306
+    environment:
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - mysql_db:/var/lib/mysql
+      - mysql_db_config:/etc/mysql
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - ${PORT_PMA}:80
+    environment:
+      - PMA_ARBITRARY=1      
+
+volumes:
+  mysql_db:
+  mysql_db_config:

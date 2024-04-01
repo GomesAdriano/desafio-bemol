@@ -1,32 +1,32 @@
 .box-parcela {
-  display: grid;
-  grid-template-columns: 3fr 2fr 3fr;
-  gap: 15px;
-  align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  border-radius: 5px;
+    display: grid;
+    grid-template-columns: 3fr 2fr 3fr;
+    gap: 15px;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .column {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
 @media screen and (max-width: 1024px) {
-  .box-parcela {
-    padding: none;
-    box-shadow: none;
-  }
+    .box-parcela {
+        padding: none;
+        box-shadow: none;
+    }
 }
 
-@media screen and (max-width: 768px){
-  .box-parcela {
-    flex-direction: column;
-  }
+@media screen and (max-width: 768px) {
+    .box-parcela {
+        flex-direction: column;
+    }
 
-  .column {
-    text-align: center;
-  }
+    .column {
+        text-align: center;
+    }
 }

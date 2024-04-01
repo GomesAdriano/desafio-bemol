@@ -44,7 +44,6 @@ const login = async (req: Request, res: Response) => {
 };
 
 const logout = async (req: Request, res: Response) => {
-
     req.session.destroy((err) => {
         if (err) return res.status(500).json(err);
         res.status(200).json({ msg: 'Cliente deslogado com sucesso' });

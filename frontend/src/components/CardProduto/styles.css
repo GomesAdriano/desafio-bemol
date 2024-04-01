@@ -1,19 +1,19 @@
 .box-produto {
-  width: 18rem;
-  padding: 10px;
-  margin: 0 auto;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s ease-in-out;
+    width: 18rem;
+    padding: 10px;
+    margin: 0 auto;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
 }
 
 .box-produto:hover {
-  transform: translateY(-5px);
+    transform: translateY(-5px);
 }
 
 .imagem-produto {
-  object-fit: contain;
-  border-radius: 5px;
-  padding-top: 5px;
-  margin: 0 auto;
-  height: 180px;
+    object-fit: contain;
+    border-radius: 5px;
+    padding-top: 5px;
+    margin: 0 auto;
+    height: 180px;
 }

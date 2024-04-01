@@ -8,7 +8,6 @@ export const headers = {
 };
 
 class Http {
-
     constructor() {
         this.instance = null;
     }

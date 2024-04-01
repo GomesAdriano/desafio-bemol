@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
-import LoginPage from "../pages/Login";
-import CadastroClientePage from "../pages/CadastroCliente";
-import Produtos from "../pages/Produtos";
-import Pedidos from "../pages/Pedidos";
+import { createBrowserRouter } from 'react-router-dom';
+import LoginPage from '../pages/Login';
+import CadastroClientePage from '../pages/CadastroCliente';
+import Produtos from '../pages/Produtos';
+import Pedidos from '../pages/Pedidos';
 
 const router = createBrowserRouter([
     {
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     {
         path: '/pedido',
         element: <Pedidos />,
-    }
+    },
 ]);
 
 export default router;

@@ -1,73 +1,73 @@
 .card-pedido {
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .imagem-pedido {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .imagem-pedido img {
-  height: 80%;
-  width: 80%;
-  object-fit: contain;
+    height: 80%;
+    width: 80%;
+    object-fit: contain;
 }
 
 .infos-pedido {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px 20px 10px 10px;
-  border-right: 1px solid var(--gray-300);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 20px 10px 10px;
+    border-right: 1px solid var(--gray-300);
 }
 
 .infos-pedido p {
-  font-weight: 700;
-  font-size: 1.2rem;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .infos-pedido span {
-  font-size: 0.9rem;
+    font-size: 0.9rem;
 }
 
 .infos-compra {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 10px 10px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px 10px 10px 20px;
 }
 
 .area-parcelas {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .titulo-parcelas {
-  display: grid;
-  grid-template-columns: 3fr 2fr 3fr;
+    display: grid;
+    grid-template-columns: 3fr 2fr 3fr;
 }
 
-@media screen and (max-width: 1024px){
-  .card-pedido {
-    grid-template-columns: 1fr 1fr;
-  }
-  .infos-pedido {
-    padding: 10px 10px 10px 10px;
-    border-right: none;
-  }  
+@media screen and (max-width: 1024px) {
+    .card-pedido {
+        grid-template-columns: 1fr 1fr;
+    }
+    .infos-pedido {
+        padding: 10px 10px 10px 10px;
+        border-right: none;
+    }
 }
 
-@media screen and (max-width: 768px){
-  .card-pedido {
-    grid-template-columns: 1fr;
-  }
+@media screen and (max-width: 768px) {
+    .card-pedido {
+        grid-template-columns: 1fr;
+    }
 }
